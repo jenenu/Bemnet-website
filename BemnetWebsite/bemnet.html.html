@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bemnet Medium Clinic | Compassionate Care</title>
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary-color: #0056b3; /* Medical Blue */
+            --secondary-color: #00a8cc; /* Light Blue */
+            --accent-color: #f1f8ff;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Header & Nav */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-appoint {
+            background: var(--primary-color);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .btn-appoint:hover {
+            background-color: #004494;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 168, 204, 0.6)), url('images/building.JPG');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary-color);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Sections General */
+        section {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Services Section */
+        #services {
+            background-color: var(--accent-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+        }
+
+        .info-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        form input, form textarea, form select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form button {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simple hide for mobile in this demo */
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+    <img src="images/logo.JPG" alt="Bemnet Logo" style="height: 50px;">
+</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#contact" class="btn-appoint">Book Appointment</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>በእምነት መካከለኛ ክሊኒክ </h1>
+            <p>አንኳን ወደ በእምነት መካከለኛ ክሊኒክ በሰላም መጡ፡፡ ክሊኒካችን በወላይታ ዞን በሌ አዋሳ ከተማ በስመ ጥር ሃኪሞችና በዘመናዊ መሳሪያዎች የታገዘ ጥራቱን የጠበቀ የህክምና አገልግሎት በመስጠት ላይ ይገኛል፡፡ ጤና ተስፋና ፈውስ በእምነት፡፡ </p>
+            <a href="#services" class="cta-button">View Our Services</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Bemnet</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="images/lab.JPG" alt="Bemnet Clinic Team">
+            </div>
+            <div class="about-text">
+                <h3>Dedicated to Community Health</h3>
+                <br>
+                <p>At Bemnet Medium Clinic, we believe that everyone deserves access to quality medical care. Established with a vision to serve the community, our facility is equipped with modern diagnostic tools and staffed by experienced healthcare professionals.</p>
+                <br>
+                <p>We focus on patient-centered care, ensuring that you feel heard, understood, and treated with the utmost respect.</p>
+                <br>
+                <ul>
+                    <li>✓ Experienced Doctors & Nurses</li>
+                    <li>✓ Modern Laboratory</li>
+                    <li>✓ Clean & Safe Environment</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🩺</div>
+                <h3>General Consultation</h3>
+                <p>Expert diagnosis and treatment for adults and children for a wide range of common ailments.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔬</div>
+                <h3>Laboratory Services</h3>
+                <p>Fast and accurate lab testing including blood work such as CBC and organ fuction test, parasitology, and urinalysis.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👶</div>
+                <h3>Pediatrics</h3>
+                <p>Specialized care for infants and children, including vaccinations and growth monitoring.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🤰</div>
+                <h3>Maternal Care</h3>
+                <p>Prenatal checkups and maternal health advice to ensure a healthy pregnancy.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🩹</div>
+                <h3>Minor Surgery & Dressing</h3>
+                <p>Wound care, suturing, circumssion, and minor surgical procedures performed in a sterile environment.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💊</div>
+                <h3>Pharmacy</h3>
+                <p>Well-stocked in emergency medications and counseling.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <h3>📍 Location</h3>
+                    <p>Bele Awasa Town, Wolaita Zone, Ethiopia</p>
+                    <p>(Infront of the High school)</p>
+                </div>
+                <div class="info-item">
+                    <h3>📞 Phone</h3>
+                    <p>+251 917 057912</p>
+                    <p>+251 967 770065</p>
+                </div>
+                <div class="info-item">
+                    <h3>⏰ Working Hours</h3>
+                    <p>Mon - Sun: 24 hours</p>
+                    <p>Including Holydays</p>
+                </div>
+                <div class="info-item">
+                    <h3>📧 Email</h3>
+                    <p>bemnetmc@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>Request an Appointment</h3>
+                <form id="appointmentForm" onsubmit="handleForm(event)">
+                    <input type="text" placeholder="Patient Name" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <select>
+                        <option value="">Select Service</option>
+                        <option value="consultation">General Consultation</option>
+                        <option value="lab">Laboratory</option>
+                        <option value="child">Pediatrics</option>
+                    </select>
+                    <input type="date" required>
+                    <textarea rows="4" placeholder="Briefly describe your symptoms or request..."></textarea>
+                    <button type="submit">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Bemnet Medium Clinic. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Simple JavaScript to handle the form submission visually
+        function handleForm(event) {
+            event.preventDefault(); // Stop the form from actually refreshing the page
+            alert("Thank you! Your appointment request has been received. We will call you shortly to confirm.");
+            document.getElementById("appointmentForm").reset();
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
